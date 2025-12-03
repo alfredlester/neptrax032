@@ -315,6 +315,7 @@ export default function Services({ onNavigate }: ServicesProps) {
           />
         </div>
       </div>
+    </div>
   </div>
 
           {/* Typography Hero */}
