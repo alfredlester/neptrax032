@@ -63,26 +63,23 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-[#1e293b] rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer"
+              className="group rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer"
             >
-              {/* Image Container - No background, full width on mobile */}
+              {/* Image Container - COMPLETELY CLEAN, no background at all */}
               <div 
-                className="relative overflow-hidden bg-transparent"
+                className="relative overflow-hidden"
                 onClick={() => handleImageClick(project.url)}
               >
-                {/* White background for transparent images */}
-                <div className="absolute inset-0 bg-white/5 md:bg-transparent -z-10"></div>
-                
+                {/* Image with clean presentation */}
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-auto max-h-64 object-contain p-2 md:p-0 md:object-cover md:h-64 md:group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-auto max-h-64 object-contain md:object-cover md:h-64 md:group-hover:scale-105 transition-transform duration-300 bg-transparent"
                   onError={handleImageError}
-                  style={{ minHeight: '200px' }}
                 />
                 
                 {/* Hover overlay with visit website button */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#1e3a8a] to-[#828787] text-[#f1f5f9] font-medium text-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]">
                     Visit Website
                     <ExternalLink size={16} className="transition-transform" />
@@ -90,7 +87,7 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              {/* Text section with grey background - directly connected to image */}
+              {/* Text section with grey background - directly under image */}
               <div className="p-6 bg-[#1e293b]">
                 <h3 className="text-2xl font-bold text-[#f1f5f9] mb-2">{project.name}</h3>
                 <p className="text-[#94a3b8] text-sm leading-tight">{project.description}</p>
