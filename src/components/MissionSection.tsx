@@ -320,11 +320,11 @@ export default function MissionSection() {
 {/* About Section */}
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
   <ScrollReveal direction="left" delay={0} depth={2}>
-    <div className="relative">
+    <div className="relative overflow-hidden rounded-2xl">
       <img 
         src="/about.png" 
         alt="About Neptrax" 
-        className="w-full h-auto rounded-2xl object-contain lg:object-cover lg:h-full bg-transparent"
+        className="w-full h-auto object-contain lg:object-cover lg:h-full bg-transparent"
       />
     </div>
   </ScrollReveal>
@@ -332,7 +332,7 @@ export default function MissionSection() {
   <ScrollReveal direction="right" delay={150}>
     <div>
       <h2 className="text-4xl font-bold text-white mb-6">About Neptrax</h2>
-      <p className="text-white/90 text-m leading-relaxed">
+      <p className="text-white/90 text-lg leading-relaxed">
         Based in Chicago, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. With 8+ years of experience, the work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally. Whether you're starting out or growing, the process stays simple and smooth.
       </p>
     </div>
