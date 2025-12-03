@@ -270,32 +270,56 @@ export default function Services({ onNavigate }: ServicesProps) {
       <section className="relative py-[120px] overflow-hidden" style={{ backgroundColor: '#031521' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
           
-{/* Featured Service */}
-<div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    {/* First Row - Featured Service */}
+    <div className="reveal-up showcase-row mb-32">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left Column - Text */}
+        <div className="order-2 lg:order-1 showcase-text">
+          <div className="badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6 badge-pulse">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00c2b3] badge-dot-pulse"></span>
+            Featured Service
+          </div>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight gradient-text-reveal">
+            Website Development
+          </h2>
+          <p className="text-lg md:text-xl text-[#bdbdbd] mb-8 leading-relaxed text-fade-in">
+            Developing digital experiences that are as beautiful as they are functional.
+          </p>
+          <button
+            className="cta-outline group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-[1.5px] border-white/12 text-white transition-all duration-300 hover:bg-white/95 hover:text-[#2a2a2a] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)] focus:outline-none focus:ring-2 focus:ring-[#00c2b3] focus:ring-offset-4 focus:ring-offset-[#2a2a2a] cta-enhanced"
+            onClick={() => onNavigate('portfolio')}
+          >
+            <span>Explore Projects</span>
+            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </button>
+        </div>
 
-    {/* LEFT: Text Area */}
-    <div>
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#00c2b3]"></span>
-        Featured Service
+        {/* Right Column - Visual */}
+        <div className="services-visual order-1 lg:order-2">
+          <div className="relative showcase-image-wrapper">
+            {/* Glow effect layers */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 image-glow"></div>
+
+            {/* Main image container with glass effect */}
+            <div className="relative overflow-hidden rounded-4xl glass-card border border-white/10 bg-[#333333]/50 backdrop-blur-sm">
+              <img
+                src="/pic.png"
+                alt="Website development demo"
+                className="w-full h-[500px] object-cover"
+              />
+              {/* Overlay gradient animation */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-blue-500/10 opacity-0 hover:opacity-100 transition-opacity duration-700"></div>
+
+              {/* Shimmer effect on hover */}
+              <div className="shimmer-overlay"></div>
+            </div>
+
+            {/* Decorative corner accents */}
+            <div className="corner-accent corner-accent-tl"></div>
+            <div className="corner-accent corner-accent-br"></div>
+          </div>
+        </div>
       </div>
-
-      <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
-        Website Development
-      </h2>
-
-      <p className="text-lg md:text-xl text-[#bdbdbd] mb-8 leading-relaxed">
-        Developing digital experiences that are as beautiful as they are functional.
-      </p>
-
-      <button
-        className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-[1.5px] border-white/12 text-white transition-all duration-300 hover:bg-white/95 hover:text-[#2a2a2a] hover:-translate-y-1"
-        onClick={() => onNavigate('portfolio')}
-      >
-        <span>Explore Projects</span>
-        <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-      </button>
     </div>
 
     {/* RIGHT: Image (appears last on mobile automatically) */}
