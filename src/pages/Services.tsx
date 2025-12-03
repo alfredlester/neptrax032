@@ -319,10 +319,10 @@ export default function Services({ onNavigate }: ServicesProps) {
   </div>
 </div>
 
-{/* Typography Hero */}
-<div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
+{/* Typography Hero - Responsive */}
+<div className={`reveal-up mb-24 md:mb-32 ${ServicesStyles.revealUp}`}>
   <div className="relative max-w-5xl">
-    <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[0.98] tracking-tight text-white">
+    <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] md:leading-[0.98] tracking-tight text-white">
       Accelerate results,<br />
       Simplify operations,<br />
       Reclaim your time for<br />
