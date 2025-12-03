@@ -710,3 +710,71 @@ All animations work on:
 
 **Last Updated**: 2025-11-16
 **Version**: 1.0.0
+
+
+@keyframes float-large {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1); 
+    opacity: 0.4;
+  }
+  25% { 
+    transform: translate(20px, -15px) scale(1.05);
+    opacity: 0.5;
+  }
+  50% { 
+    transform: translate(-15px, 10px) scale(0.95);
+    opacity: 0.3;
+  }
+  75% { 
+    transform: translate(10px, 20px) scale(1.02);
+    opacity: 0.45;
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1); 
+    opacity: 0.3;
+  }
+  33% { 
+    transform: translate(15px, -10px) scale(1.1);
+    opacity: 0.4;
+  }
+  66% { 
+    transform: translate(-10px, 15px) scale(0.9);
+    opacity: 0.2;
+  }
+}
+
+@keyframes float-small {
+  0% { 
+    transform: translate(0, 0); 
+    opacity: 0.4;
+  }
+  25% { 
+    transform: translate(30px, -20px);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translate(-20px, 30px);
+    opacity: 0.3;
+  }
+  75% { 
+    transform: translate(25px, 25px);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+}
+
+@keyframes gradient-slow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient-slow {
+  background-size: 400% 400%;
+  animation: gradient-slow 20s ease infinite;
+}
