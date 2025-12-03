@@ -320,11 +320,11 @@ export default function MissionSection() {
 {/* About Section */}
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
   <ScrollReveal direction="left" delay={0} depth={2}>
-    <div className="relative overflow-hidden rounded-2xl">
+    <div className="relative">
       <img 
         src="/about.png" 
         alt="About Neptrax" 
-        className="w-full h-auto object-contain lg:object-cover lg:h-full bg-transparent"
+        className="w-full h-auto rounded-2xl object-contain lg:object-cover lg:h-full bg-transparent"
       />
     </div>
   </ScrollReveal>
@@ -337,4 +337,4 @@ export default function MissionSection() {
       </p>
     </div>
   </ScrollReveal>
-</div>      
+</div>   
