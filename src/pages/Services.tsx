@@ -329,45 +329,940 @@ export default function Services({ onNavigate }: ServicesProps) {
   </div>
 </div>
 
-          {/* AI Section */}
-          <div className={`reveal-up ${ServicesStyles.revealUp}`}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00c2b3]"></span>
-                  Newly Added
-                </div>
-                <h2 className="text-5xl md:text-6xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                  AI Agents & Chatbot Integration
-                </h2>
-                <p className="text-lg md:text-xl text-[#bdbdbd] mb-8 leading-relaxed">
-                  We design AI Agents for natural user interaction, paired with a reasoning agent that plans and executes tasks, making your daily work simpler and more efficient.
-                </p>
-                <button
-                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-[1.5px] border-white/12 text-white transition-all duration-300 hover:bg-white/95 hover:text-[#2a2a2a] hover:-translate-y-1"
-                  onClick={() => onNavigate('portfolio')}
-                >
-                  <span>Explore Projects</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </button>
-              </div>
+    {/* Third Row - Newly Added */}
+    <div className="reveal-up showcase-row">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left Column - Text */}
+        <div className="showcase-text">
+          <div className="badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6 badge-pulse badge-new">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00c2b3] badge-dot-pulse"></span>
+            Newly Added
+          </div>
+          <h2 className="text-5xl md:text-6xl lg:text-6xl font-black text-white mb-6 leading-tight gradient-text-reveal">
+            AI Agents & Chatbot Integration
+          </h2>
+          <p className="text-lg md:text-xl text-[#bdbdbd] mb-8 leading-relaxed text-fade-in">
+            We design AI Agents for natural user interaction, paired with a reasoning agent that plans and executes tasks, making your daily work simpler and more efficient.
+          </p>
+          <button
+            className="cta-outline group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-[1.5px] border-white/12 text-white transition-all duration-300 hover:bg-white/95 hover:text-[#2a2a2a] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)] focus:outline-none focus:ring-2 focus:ring-[#00c2b3] focus:ring-offset-4 focus:ring-offset-[#2a2a2a] cta-enhanced"
+            onClick={() => onNavigate('portfolio')}
+          >
+            <span>Explore Projects</span>
+            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </button>
+        </div>
 
-              <div className="services-visual">
-                <div className="relative">
-                  <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#333333]/50 backdrop-blur-sm">
-                    <img
-                      src="/ai.png"
-                      alt="AI Chatbot demo"
-                      className="w-full h-[400px] object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
+        {/* Right Column - Visual */}
+        <div className="services-visual">
+          <div className="relative showcase-image-wrapper">
+            {/* Glow effect layers */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 image-glow"></div>
+
+            {/* Main image container with glass effect */}
+            <div className="relative overflow-hidden rounded-3xl glass-card border border-white/10 bg-[#333333]/50 backdrop-blur-sm">
+              <img
+                src="/ai.png"
+                alt="AI Chatbot demo"
+                className="w-full h-[500px] object-cover"
+              />
+              {/* Overlay gradient animation */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-cyan-500/10 opacity-0 hover:opacity-100 transition-opacity duration-700"></div>
+
+              {/* Shimmer effect on hover */}
+              <div className="shimmer-overlay"></div>
+
+              {/* AI pulse indicator */}
+              <div className="absolute top-6 right-6 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-2 rounded-full ai-badge">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 ai-pulse"></span>
+                <span className="text-white text-xs font-semibold">AI Powered</span>
               </div>
             </div>
+
+            {/* Decorative corner accents */}
+            <div className="corner-accent corner-accent-tl"></div>
+            <div className="corner-accent corner-accent-br"></div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* Enhanced Modern Animation Styles */}
+      <style jsx>{`
+        /* ============================================
+           SERVICES GRADIENT SECTION - PREMIUM STYLING
+           ============================================ */
+
+        /* Premium gradient background from "What We Offer" section to page end */
+        .services-gradient-section {
+          background: linear-gradient(
+            180deg,
+    #000005 0%,
+    #040a16 12%,
+    #070f1f 25%,
+    #0a1528 40%,
+    #0a1528 60%,
+    #070f1f 75%,
+    #040a16 88%,
+    #000005 100%
+          );
+          position: relative;
+        }
+
+        /* Inter font family for all "What We Offer" section text */
+        .services-section-title,
+        .services-section-text,
+        .minimal-service-item h3,
+        .minimal-service-item p,
+        .minimal-service-item > div {
+          font-family: 'Inter', 'DM Sans', sans-serif;
+        }
+
+        /* Enhanced text rendering for premium appearance */
+        .services-gradient-section * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Subtle overlay for enhanced depth */
+        .services-gradient-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+            ellipse at top,
+            rgba(13, 26, 48, 0.3) 0%,
+            transparent 60%
+          );
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        /* Ensure content is above overlay */
+        .services-gradient-section > div {
+          position: relative;
+          z-index: 2;
+        }
+
+        /* ============================================
+           MINIMALIST GALLERY ANIMATIONS
+           ============================================ */
+
+        /* Service item reveal animation */
+        @keyframes service-reveal {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes number-slide {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes line-expand {
+          from {
+            width: 0;
+          }
+          to {
+            width: 4rem;
+          }
+        }
+
+        /* Base state - hidden */
+        .minimal-service-item {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Revealed state */
+        .minimal-service-item.service-visible {
+          animation: service-reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Number animation when visible */
+        .minimal-service-item.service-visible > div:first-child {
+          animation: number-slide 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Line expansion on reveal */
+        .minimal-service-item.service-visible .minimal-line {
+          animation: line-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+        }
+
+        /* Stagger delays for sequential animation */
+        .minimal-service-item:nth-child(1) { animation-delay: 0s; }
+        .minimal-service-item:nth-child(2) { animation-delay: 0.1s; }
+        .minimal-service-item:nth-child(3) { animation-delay: 0.2s; }
+        .minimal-service-item:nth-child(4) { animation-delay: 0.3s; }
+        .minimal-service-item:nth-child(5) { animation-delay: 0.4s; }
+        .minimal-service-item:nth-child(6) { animation-delay: 0.5s; }
+        .minimal-service-item:nth-child(7) { animation-delay: 0s; }
+        .minimal-service-item:nth-child(8) { animation-delay: 0.1s; }
+        .minimal-service-item:nth-child(9) { animation-delay: 0.2s; }
+        .minimal-service-item:nth-child(10) { animation-delay: 0.3s; }
+        .minimal-service-item:nth-child(11) { animation-delay: 0.4s; }
+        .minimal-service-item:nth-child(12) { animation-delay: 0.5s; }
+
+        /* Focus state for accessibility */
+        .minimal-service-item:focus-within {
+          outline: 2px solid black;
+          outline-offset: 8px;
+        }
+
+        /* Typography refinements */
+        .minimal-service-item h3 {
+          font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+          letter-spacing: -0.02em;
+        }
+
+        .minimal-service-item p {
+          c
+          line-height: 1.7;
+          max-width: 90%;
+        }
+
+        /* Smooth easing for all transitions */
+        .minimal-service-item * {
+          transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 1024px) {
+          .minimal-service-item {
+            padding-left: 0;
+          }
+
+          .minimal-service-item > div:first-child {
+            font-size: 4rem;
+            left: -0.5rem;
+          }
+
+          .minimal-service-item .pl-24 {
+            padding-left: 5rem;
+          }
+
+          .minimal-service-item:hover .pl-24,
+          .minimal-service-item.group:hover > div:last-child {
+            padding-left: 5.5rem;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .minimal-service-item > div:first-child {
+            font-size: 3rem;
+            left: 0;
+            top: 1rem;
+          }
+
+          .minimal-service-item .pl-24 {
+            padding-left: 4rem;
+          }
+
+          .minimal-service-item:hover .pl-24,
+          .minimal-service-item.group:hover > div:last-child {
+            padding-left: 4rem;
+          }
+
+          .minimal-service-item p {
+            max-width: 100%;
+          }
+        }
+
+        /* ============================================
+           KEYFRAME ANIMATIONS
+           ============================================ */
+
+        /* Reveal heading animation */
+        @keyframes reveal-heading {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+          }
+        }
+
+        .reveal-heading {
+          animation: reveal-heading 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Hero text glow animation */
+        @keyframes glow-text {
+          0%, 100% {
+            text-shadow:
+              0 0 20px rgba(34, 211, 238, 0.5),
+              0 0 40px rgba(34, 211, 238, 0.3),
+              0 0 60px rgba(34, 211, 238, 0.2);
+          }
+          50% {
+            text-shadow:
+              0 0 30px rgba(34, 211, 238, 0.7),
+              0 0 60px rgba(34, 211, 238, 0.5),
+              0 0 80px rgba(34, 211, 238, 0.3);
+          }
+        }
+
+        /* Card entrance animation */
+        @keyframes card-fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        /* Floating orb animation for background */
+        @keyframes float-orb {
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.15;
+          }
+          50% {
+            transform: translate(30px, -30px) scale(1.1);
+            opacity: 0.25;
+          }
+        }
+
+        /* Badge pulse animation */
+        @keyframes badge-pulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(0, 194, 179, 0.4);
+          }
+          50% {
+            box-shadow: 0 0 0 8px rgba(0, 194, 179, 0);
+          }
+        }
+
+        /* Badge dot pulse */
+        @keyframes dot-pulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.3);
+            opacity: 0.7;
+          }
+        }
+
+        /* Shimmer effect for images */
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%) translateY(-100%) rotate(45deg);
+          }
+          100% {
+            transform: translateX(100%) translateY(100%) rotate(45deg);
+          }
+        }
+
+        /* Glow pulse for typography hero */
+        @keyframes glow-pulse {
+          0%, 100% {
+            opacity: 0.6;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.8;
+            transform: scale(1.05);
+          }
+        }
+
+        /* Text line reveal animation */
+        @keyframes text-line-reveal {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+          }
+        }
+
+        /* Gradient text shimmer */
+        @keyframes gradient-shift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        /* Accent line animation */
+        @keyframes accent-line-draw {
+          from {
+            width: 0;
+            opacity: 0;
+          }
+          to {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+
+        /* Floating particle animation */
+        @keyframes particle-float {
+          0%, 100% {
+            transform: translate(0, 0);
+            opacity: 0.3;
+          }
+          25% {
+            transform: translate(20px, -20px);
+            opacity: 0.6;
+          }
+          50% {
+            transform: translate(40px, 0);
+            opacity: 0.3;
+          }
+          75% {
+            transform: translate(20px, 20px);
+            opacity: 0.6;
+          }
+        }
+
+        /* Image float animation */
+        @keyframes image-float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        /* Corner accent animation */
+        @keyframes corner-accent-fade {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 0.4;
+            transform: scale(1);
+          }
+        }
+
+        /* AI pulse animation */
+        @keyframes ai-pulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+            transform: scale(1);
+          }
+          50% {
+            box-shadow: 0 0 0 8px rgba(52, 211, 153, 0);
+            transform: scale(1.1);
+          }
+        }
+
+        /* CTA button enhanced animation */
+        @keyframes cta-pulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(0, 194, 179, 0.4);
+          }
+          50% {
+            box-shadow: 0 0 0 10px rgba(0, 194, 179, 0);
+          }
+        }
+
+        /* ============================================
+           BASE STYLES & UTILITIES
+           ============================================ */
+
+        .animate-glow-text {
+          animation: glow-text 3s ease-in-out infinite;
+        }
+
+        .service-card {
+          opacity: 0;
+          transform: translateY(30px) scale(0.95);
+          transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .service-card.card-visible {
+          animation: card-fade-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .line-clamp-4 {
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        /* Reveal animations for showcase section */
+        .reveal-up {
+          opacity: 0;
+          transform: translateY(18px);
+          transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.6s;
+        }
+
+        .reveal-up.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* ============================================
+           FLOATING BACKGROUND ORBS
+           ============================================ */
+
+        .floating-orb {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(60px);
+          pointer-events: none;
+        }
+
+        .floating-orb-1 {
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+          top: 10%;
+          right: 10%;
+          animation: float-orb 20s ease-in-out infinite;
+        }
+
+        .floating-orb-2 {
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+          bottom: 20%;
+          left: 5%;
+          animation: float-orb 25s ease-in-out infinite 5s;
+        }
+
+        .floating-orb-3 {
+          width: 250px;
+          height: 250px;
+          background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+          top: 50%;
+          left: 50%;
+          animation: float-orb 18s ease-in-out infinite 10s;
+        }
+
+        /* ============================================
+           SHOWCASE ROW ANIMATIONS
+           ============================================ */
+
+        .showcase-row.in-view .showcase-text {
+          animation: text-line-reveal 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        }
+
+        .showcase-row.in-view .showcase-image-wrapper {
+          animation: text-line-reveal 1s cubic-bezier(0.2, 0.9, 0.2, 1) 0.3s forwards;
+        }
+
+        /* ============================================
+           BADGE ANIMATIONS
+           ============================================ */
+
+        .badge-pill {
+          font-weight: 600;
+          letter-spacing: 0.05em;
+          position: relative;
+        }
+
+        .badge-pulse {
+          animation: badge-pulse 2s ease-in-out infinite;
+        }
+
+        .badge-dot-pulse {
+          animation: dot-pulse 1.5s ease-in-out infinite;
+        }
+
+        .badge-new {
+          background: linear-gradient(135deg, rgba(0, 194, 179, 0.2) 0%, rgba(52, 211, 153, 0.2) 100%);
+          border: 1px solid rgba(0, 194, 179, 0.3);
+        }
+
+        /* ============================================
+           TEXT ANIMATIONS
+           ============================================ */
+
+        .gradient-text-reveal {
+          background: linear-gradient(90deg, #ffffff 0%, #f0f9ff 50%, #ffffff 100%);
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        .text-fade-in {
+          opacity: 0;
+          animation: text-line-reveal 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) 0.4s forwards;
+        }
+
+        /* ============================================
+           TYPOGRAPHY HERO SECTION
+           ============================================ */
+
+        .typography-hero-section .glow-pulse {
+          animation: glow-pulse 4s ease-in-out infinite;
+        }
+
+        .text-hero-animated {
+          position: relative;
+        }
+
+        .text-line {
+          display: inline-block;
+          opacity: 0;
+        }
+
+        .typography-hero-section.in-view .text-line {
+          animation: text-line-reveal 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        }
+
+        /* Accent lines for typography section */
+        .accent-line {
+          position: absolute;
+          height: 2px;
+          background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.6) 50%, transparent 100%);
+          opacity: 0;
+        }
+
+        .accent-line-1 {
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+
+        .accent-line-2 {
+          bottom: 0;
+          right: 0;
+          width: 100%;
+        }
+
+        .typography-hero-section.in-view .accent-line {
+          animation: accent-line-draw 1.5s cubic-bezier(0.2, 0.9, 0.2, 1) 0.5s forwards;
+        }
+
+        /* Floating particles */
+        .hero-particles {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        .particle {
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, transparent 70%);
+          border-radius: 50%;
+          opacity: 0;
+        }
+
+        .typography-hero-section.in-view .particle {
+          animation: particle-float 15s ease-in-out infinite;
+        }
+
+        .particle-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .particle-2 { top: 40%; right: 15%; animation-delay: 2s; }
+        .particle-3 { bottom: 30%; left: 20%; animation-delay: 4s; }
+        .particle-4 { top: 60%; right: 25%; animation-delay: 6s; }
+        .particle-5 { bottom: 15%; right: 10%; animation-delay: 8s; }
+
+        /* ============================================
+           IMAGE & VISUAL EFFECTS
+           ============================================ */
+
+        .showcase-image-wrapper {
+          position: relative;
+          isolation: isolate;
+        }
+
+        /* Glass card effect with backdrop blur */
+        .glass-card {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 2px solid rgba(255, 255, 255, 0.05);
+          box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+          transition: all 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+        }
+
+        .glass-card:hover {
+          border-color: rgba(6, 182, 212, 0.3);
+          box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.6),
+            0 0 40px rgba(6, 182, 212, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        /* Image floating animation */
+        .image-float {
+          animation: image-float 6s ease-in-out infinite;
+          transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.2, 1);
+        }
+
+        .showcase-image-wrapper:hover .image-float {
+          animation-play-state: paused;
+        }
+
+        /* Shimmer overlay effect */
+        .shimmer-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            110deg,
+            transparent 0%,
+            transparent 40%,
+            rgba(255, 255, 255, 0.15) 50%,
+            transparent 60%,
+            transparent 100%
+          );
+          transform: translateX(-100%) translateY(-100%) rotate(45deg);
+          transition: opacity 0.3s;
+          pointer-events: none;
+        }
+
+        .glass-card:hover .shimmer-overlay {
+          animation: shimmer 2s ease-in-out;
+        }
+
+        /* Corner accent decorations */
+        .corner-accent {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .corner-accent-tl {
+          top: -10px;
+          left: -10px;
+          border-top: 2px solid rgba(6, 182, 212, 0.6);
+          border-left: 2px solid rgba(6, 182, 212, 0.6);
+          border-radius: 8px 0 0 0;
+        }
+
+        .corner-accent-br {
+          bottom: -10px;
+          right: -10px;
+          border-bottom: 2px solid rgba(6, 182, 212, 0.6);
+          border-right: 2px solid rgba(6, 182, 212, 0.6);
+          border-radius: 0 0 8px 0;
+        }
+
+        .showcase-image-wrapper:hover .corner-accent {
+          animation: corner-accent-fade 0.5s ease-out forwards;
+        }
+
+        /* Image glow effect */
+        .image-glow {
+          transition: opacity 0.7s ease-out;
+        }
+
+        .showcase-image-wrapper:hover .image-glow {
+          opacity: 1 !important;
+        }
+
+        /* ============================================
+           AI BADGE EFFECTS
+           ============================================ */
+
+        .ai-badge {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: all 0.5s cubic-bezier(0.2, 0.9, 0.2, 1);
+        }
+
+        .glass-card:hover .ai-badge {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .ai-pulse {
+          animation: ai-pulse 2s ease-in-out infinite;
+        }
+
+        /* ============================================
+           CTA BUTTON ENHANCEMENTS
+           ============================================ */
+
+        .cta-enhanced {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .cta-enhanced::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .cta-enhanced:hover::before {
+          opacity: 1;
+        }
+
+        .cta-enhanced:active {
+          animation: cta-pulse 0.6s ease-out;
+        }
+
+        /* ============================================
+           DISPLAY HERO TYPOGRAPHY
+           ============================================ */
+
+        .display-hero {
+          word-break: keep-all;
+        }
+
+        /* Radial gradient utility */
+        .bg-gradient-radial {
+          background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+        }
+
+        /* Services visual hover effects */
+        .services-visual img {
+          cursor: pointer;
+        }
+
+        /* ============================================
+           ACCESSIBILITY - REDUCED MOTION
+           ============================================ */
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+
+          .minimal-service-item {
+            opacity: 1;
+            transform: none;
+            animation: none !important;
+          }
+
+          .minimal-service-item.service-visible {
+            animation: none !important;
+          }
+
+          .minimal-service-item.service-visible > div:first-child {
+            animation: none !important;
+          }
+
+          .minimal-service-item.service-visible .minimal-line {
+            animation: none !important;
+            width: 4rem;
+          }
+
+          .reveal-up {
+            transform: none;
+            opacity: 1;
+            transition: none;
+          }
+
+          .floating-orb,
+          .particle,
+          .image-float,
+          .shimmer-overlay {
+            animation: none !important;
+          }
+        }
+
+        /* ============================================
+           RESPONSIVE BREAKPOINTS
+           ============================================ */
+
+        @media (max-width: 1024px) {
+          .grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .display-hero {
+            font-size: 3rem;
+            line-height: 1.1;
+          }
+
+          .floating-orb {
+            opacity: 0.5;
+          }
+
+          .floating-orb-1 { width: 200px; height: 200px; }
+          .floating-orb-2 { width: 250px; height: 250px; }
+          .floating-orb-3 { width: 150px; height: 150px; }
+        }
+
+        @media (max-width: 640px) {
+          .grid {
+            grid-template-columns: repeat(1, 1fr);
+          }
+
+          .display-hero {
+            font-size: 2rem;
+            line-height: 1.15;
+            text-align: center;
+          }
+
+          #services-showcase-2 {
+            padding: 60px 0;
+          }
+
+          .reveal-up {
+            margin-bottom: 60px !important;
+          }
+
+          .floating-orb {
+            display: none;
+          }
+
+          .hero-particles {
+            display: none;
+          }
+
+          .glass-card {
+            backdrop-filter: blur(5px);
+          }
+
+          .corner-accent {
+            display: none;
+          }
+        }
+
+        /* Mobile order fixes */
+        @media (max-width: 1023px) {
+          .services-visual {
+            margin-bottom: 2rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }
