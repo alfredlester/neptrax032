@@ -275,43 +275,44 @@ export default function Services({ onNavigate }: ServicesProps) {
       <section className="relative py-[120px] overflow-hidden" style={{ backgroundColor: '#031521' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
           
-          {/* Featured Service */}
-          <div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1">
-                <div className="badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00c2b3]"></span>
-                  Featured Service
-                </div>
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
-                  Website Development
-                </h2>
-                <p className="text-lg md:text-xl text-[#bdbdbd] mb-8 leading-relaxed">
-                  Developing digital experiences that are as beautiful as they are functional.
-                </p>
-                <button
-                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-[1.5px] border-white/12 text-white transition-all duration-300 hover:bg-white/95 hover:text-[#2a2a2a] hover:-translate-y-1"
-                  onClick={() => onNavigate('portfolio')}
-                >
-                  <span>Explore Projects</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </button>
-              </div>
+{/* Featured Service */}
+<div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
 
-              <div className="services-visual order-1 lg:order-2">
-                <div className="relative">
-                  <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#333333]/50 backdrop-blur-sm">
-                    <img
-                      src="/pic.png"
-                      alt="Website development demo"
-                      className="w-full h-[400px] object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  {/* TEXT CONTENT */}
+  <div className="max-w-3xl mx-auto text-center mb-12">
+    <div className="badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6">
+      <span className="w-1.5 h-1.5 rounded-full bg-[#00c2b3]"></span>
+      Featured Service
+    </div>
+
+    <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+      Website Development
+    </h2>
+
+    <p className="text-lg md:text-xl text-[#bdbdbd] mb-8 leading-relaxed">
+      Developing digital experiences that are as beautiful as they are functional.
+    </p>
+
+    <button
+      className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-[1.5px] border-white/12 text-white transition-all duration-300 hover:bg-white/95 hover:text-[#2a2a2a] hover:-translate-y-1"
+      onClick={() => onNavigate('portfolio')}
+    >
+      <span>Explore Projects</span>
+      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+    </button>
+  </div>
+
+  {/* IMAGE AFTER EVERYTHING */}
+  <div className="services-visual max-w-5xl mx-auto">
+    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#333333]/50 backdrop-blur-sm">
+      <img
+        src="/pic.png"
+        alt="Website development demo"
+        className="w-full h-[450px] object-cover"
+        loading="lazy"
+      />
+    </div>
+  </div>
 
           {/* Typography Hero */}
           <div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
