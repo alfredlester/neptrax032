@@ -319,19 +319,19 @@ export default function Services({ onNavigate }: ServicesProps) {
   </div>
 </div>
 
-{/* 6-Line Mobile-Optimized Version */}
-<div className="py-10 md:py-16">
-  <div className="max-w-3xl mx-auto px-4 text-center">
-    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold leading-relaxed md:leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF]">
-      Simplify operations and<br />
-      Reclaim your time,<br />
-      with Neptrax grows your business<br />
-      online from an Idea to a<br />
-      custom Website.
+{/* Typography Hero */}
+<div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
+  <div className="relative max-w-5xl">
+    <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[0.98] tracking-tight text-white">
+      Accelerate results,<br />
+      Simplify operations,<br />
+      Reclaim your time for<br />
+      What truly grows your<br />
+      business online from an<br />
+      Idea to a custom Website.
     </h2>
   </div>
 </div>
-
           {/* AI Section */}
           <div className={`reveal-up ${ServicesStyles.revealUp}`}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
