@@ -388,3 +388,4 @@ export default function Services({ onNavigate }: ServicesProps) {
     </div>
   </div>
 </section>
+</div>
