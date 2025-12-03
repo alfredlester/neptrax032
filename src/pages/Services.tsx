@@ -98,55 +98,55 @@ export default function Services({ onNavigate }: ServicesProps) {
   }, []);
 
   const servicesList = [
-    {
-      title: 'Custom Website Design',
-      description: 'Crafted pixel-perfect designs that reflect your brand identity. We create stunning, user-friendly websites that captivate visitors and convert them into loyal customers through strategic visual storytelling.',
-    },
-    {
-      title: 'Full-Stack Web Development',
-      description: 'Building robust, scalable web apps with cutting-edge technologies. From front-end interfaces to back-end architecture, we deliver high-performance solutions that grow with your business needs.',
-    },
-    {
-      title: 'AI-Powered Chatbots',
-      description: 'Intelligent conversational AI that engages customers 24/7. Our chatbots provide instant support, answer queries, and guide users through seamless experiences while learning from every interaction.',
-    },
-    {
-      title: 'Social Media Management',
-      description: 'Strategic social media campaigns that build communities and drive engagement. We manage your presence across platforms, create compelling content, and grow your audience organically.',
-    },
-    {
-      title: 'Brand Identity & Visual Design',
-      description: 'Comprehensive brand development from concept to execution. We craft memorable logos, color palettes, and visual systems that establish strong brand recognition and communicate your unique value proposition.',
-    },
-    {
-      title: 'Social Media & Digital Advertising',
-      description: 'High-converting ad campaigns across Facebook, Instagram, LinkedIn, and Google. We optimize targeting, creative, and messaging to maximize ROI and deliver measurable results for your marketing investment.',
-    },
-    {
-      title: 'SEO Optimization & Growth Strategy',
-      description: 'Comprehensive SEO solutions that boost your search rankings and organic traffic. We implement technical optimizations, content strategies, and link-building campaigns that deliver sustainable growth and visibility.',
-    },
-    {
-      title: 'AI Automation Agents',
-      description: 'Custom AI-powered automation that streamlines workflows and increases efficiency. From data processing to customer service, we build intelligent agents that handle repetitive tasks and free up your team.',
-    },
-    {
-      title: 'Mobile App Design & Development',
-      description: 'Native and cross-platform mobile applications that deliver exceptional user experiences. We design and develop iOS and Android apps that are intuitive, fast, and aligned with your business objectives.',
-    },
-    {
-      title: 'Marketing Audit & Strategic Planning',
-      description: 'In-depth analysis of your marketing performance with actionable recommendations. We identify opportunities, optimize spending, and create comprehensive strategies that align with your business goals and budget.',
-    },
-    {
-      title: 'E-Commerce Store Development',
-      description: 'Complete e-commerce solutions built for conversions and scalability. From product catalogs to secure checkout systems, we create online stores that provide seamless shopping experiences and drive revenue.',
-    },
-    {
-      title: 'Content Creation & Copywriting',
-      description: 'Compelling content that resonates with your audience and drives action. Our expert writers craft SEO-optimized blog posts, website copy, and marketing materials that establish authority and generate leads.',
-    }
-  ];
+   {
+  title: 'Custom Website Design',
+  description: 'Clean, modern websites designed to match any brand. Focused on easy navigation, professional visuals, and turning visitors into customers.',
+},
+{
+  title: 'Full-Stack Web Development',
+  description: 'Fast, reliable websites and web apps built from front-end to back-end. Made to perform smoothly and scale as the business grows.',
+},
+{
+  title: 'AI-Powered Chatbots',
+  description: 'Smart chatbots that answer questions, guide visitors, and offer round-the-clock support without needing constant supervision.',
+},
+{
+  title: 'Social Media Management',
+  description: 'Complete management of social media profiles, including posting, engagement, and community growth across major platforms.',
+},
+{
+  title: 'Brand Identity & Visual Design',
+  description: 'Professional branding that stands out — logos, colors, and visual styles that give any business a clear and memorable identity.',
+},
+{
+  title: 'Social Media & Digital Advertising',
+  description: 'Targeted ad campaigns across Facebook, Instagram, LinkedIn, and Google, built to reach the right audience and deliver strong returns.',
+},
+{
+  title: 'SEO Optimization & Growth Strategy',
+  description: 'Search-engine improvements that help websites rank higher and bring in more organic traffic through technical fixes and content strategy.',
+},
+{
+  title: 'AI Automation Agents',
+  description: 'Custom automation tools powered by AI to handle repetitive tasks, speed up workflows, and improve efficiency.',
+},
+{
+  title: 'Mobile App Design & Development',
+  description: 'User-friendly mobile apps for iOS and Android, designed to look great, run fast, and support business goals.',
+},
+{
+  title: 'Marketing Audit & Strategic Planning',
+  description: 'Clear evaluation of current marketing performance, highlighting strengths, gaps, and actionable steps for better results.',
+},
+{
+  title: 'E-Commerce Store Development',
+  description: 'Online stores built for easy shopping, smooth checkout, and strong product presentation — optimized for conversions.',
+},
+{
+  title: 'Content Creation & Copywriting',
+  description: 'Simple, effective content for websites, blogs, and marketing materials, written to engage readers and inspire action.',
+}
+];
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] overflow-hidden">
