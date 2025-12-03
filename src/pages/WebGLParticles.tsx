@@ -1,128 +1,187 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const PremiumAnimatedBackground = () => {
+const PremiumCanvasBackground = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number>();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    setIsMobile(window.innerWidth < 768);
   }, []);
 
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // High-end color palette
+    const colors = [
+      { r: 59, g: 130, b: 246, a: 0.4 },  // blue-500
+      { r: 139, g: 92, b: 246, a: 0.4 },  // violet-500
+      { r: 96, g: 165, b: 250, a: 0.3 },  // blue-400
+      { r: 168, g: 85, b: 247, a: 0.3 },  // violet-400
+      { r: 52, g: 211, b: 153, a: 0.2 },  // emerald-400
+      { r: 245, g: 158, b: 11, a: 0.2 },  // amber-500
+    ];
+
+    // Optimized particle count
+    const particleCount = isMobile ? 60 : 120;
+    
+    // Create particles with depth simulation
+    const particles = Array.from({ length: particleCount }, (_, i) => {
+      const size = Math.random() * 3 + 1;
+      const depth = Math.random() * 2 + 0.5; // Simulate 3D depth
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: size,
+        originalSize: size,
+        depth: depth,
+        speedX: (Math.random() - 0.5) * 0.8 * depth,
+        speedY: (Math.random() - 0.5) * 0.8 * depth,
+        color: color,
+        waveOffset: Math.random() * Math.PI * 2,
+        waveSpeed: Math.random() * 0.02 + 0.01,
+        waveAmplitude: Math.random() * 15 + 5,
+        connections: [] as number[],
+      };
+    });
+
+    // Create connections between nearby particles
+    particles.forEach((particle, i) => {
+      particle.connections = [];
+      particles.forEach((other, j) => {
+        if (i !== j && Math.random() > 0.7) {
+          const dx = particle.x - other.x;
+          const dy = particle.y - other.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 200) {
+            particle.connections.push(j);
+          }
+        }
+      });
+    });
+
+    let time = 0;
+
+    const drawParticle = (p: any, ctx: CanvasRenderingContext2D) => {
+      // Wave motion
+      const waveX = Math.sin(time * p.waveSpeed + p.waveOffset) * p.waveAmplitude;
+      const waveY = Math.cos(time * p.waveSpeed + p.waveOffset) * p.waveAmplitude;
+      
+      const drawX = p.x + waveX;
+      const drawY = p.y + waveY;
+      
+      // Depth-based size variation
+      const currentSize = p.originalSize * (0.8 + 0.4 * Math.sin(time * 0.003 + p.waveOffset));
+
+      // Glow effect
+      const gradient = ctx.createRadialGradient(
+        drawX, drawY, 0,
+        drawX, drawY, currentSize * 3
+      );
+      gradient.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${p.color.a})`);
+      gradient.addColorStop(1, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0)`);
+      
+      ctx.beginPath();
+      ctx.arc(drawX, drawY, currentSize, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      
+      return { x: drawX, y: drawY };
+    };
+
+    const drawConnection = (p1: any, p2: any, ctx: CanvasRenderingContext2D) => {
+      const dx = p2.x - p1.x;
+      const dy = p2.y - p1.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      if (distance < 150) {
+        const opacity = 0.2 * (1 - distance / 150);
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time += 0.05;
+
+      // Draw gradient background
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, 'rgba(15, 23, 42, 0.1)'); // slate-900
+      gradient.addColorStop(0.5, 'rgba(30, 41, 59, 0.05)'); // slate-800
+      gradient.addColorStop(1, 'rgba(51, 65, 85, 0.1)'); // slate-700
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      const particlePositions = particles.map((p) => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+        
+        // Boundary wrap
+        if (p.x > canvas.width + 50) p.x = -50;
+        if (p.x < -50) p.x = canvas.width + 50;
+        if (p.y > canvas.height + 50) p.y = -50;
+        if (p.y < -50) p.y = canvas.height + 50;
+        
+        return drawParticle(p, ctx);
+      });
+
+      // Draw connections
+      particles.forEach((p, i) => {
+        p.connections.forEach((connIndex) => {
+          if (connIndex < particlePositions.length) {
+            drawConnection(
+              { x: particlePositions[i].x, y: particlePositions[i].y },
+              { x: particlePositions[connIndex].x, y: particlePositions[connIndex].y },
+              ctx
+            );
+          }
+        });
+      });
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    // Handle resize
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
+  }, [isMobile]);
+
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      {/* Animated Gradient Layers - Creates depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/40 to-purple-900/30 animate-gradient-slow"></div>
-      
-      {/* Subtle grid overlay - adds tech/design feel */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `
-            linear-gradient(90deg, transparent 95%, rgba(59, 130, 246, 0.3) 100%),
-            linear-gradient(0deg, transparent 95%, rgba(59, 130, 246, 0.3) 100%)
-          `,
-          backgroundSize: '40px 40px'
-        }}
-      ></div>
-      
-      {/* Floating elements with different animations for depth */}
-      <div className="absolute inset-0">
-        {/* Layer 1: Slow moving large circles */}
-        {[...Array(isMobile ? 4 : 8)].map((_, i) => (
-          <div
-            key={`large-${i}`}
-            className="absolute rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl"
-            style={{
-              width: `${Math.random() * 200 + 100}px`,
-              height: `${Math.random() * 200 + 100}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float-large ${15 + Math.random() * 15}s ease-in-out infinite alternate`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          />
-        ))}
-        
-        {/* Layer 2: Medium speed medium circles */}
-        {[...Array(isMobile ? 6 : 12)].map((_, i) => (
-          <div
-            key={`medium-${i}`}
-            className="absolute rounded-full bg-gradient-to-r from-blue-400/20 to-cyan-300/20 blur-lg"
-            style={{
-              width: `${Math.random() * 80 + 40}px`,
-              height: `${Math.random() * 80 + 40}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float-medium ${8 + Math.random() * 8}s ease-in-out infinite alternate`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-        ))}
-        
-        {/* Layer 3: Fast moving small dots (like particles) */}
-        {[...Array(isMobile ? 15 : 30)].map((_, i) => (
-          <div
-            key={`small-${i}`}
-            className="absolute rounded-full bg-blue-300/30"
-            style={{
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float-small ${4 + Math.random() * 4}s linear infinite`,
-              animationDelay: `${Math.random() * 2}s`,
-              boxShadow: '0 0 8px rgba(96, 165, 250, 0.5)'
-            }}
-          />
-        ))}
-        
-        {/* Subtle connecting lines for network effect */}
-        {!isMobile && (
-          <svg className="absolute inset-0 w-full h-full opacity-20">
-            <defs>
-              <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.5" />
-              </linearGradient>
-            </defs>
-            {[...Array(6)].map((_, i) => (
-              <line
-                key={`line-${i}`}
-                x1={`${Math.random() * 100}%`}
-                y1={`${Math.random() * 100}%`}
-                x2={`${Math.random() * 100}%`}
-                y2={`${Math.random() * 100}%`}
-                stroke="url(#line-gradient)"
-                strokeWidth="0.5"
-                strokeDasharray="5,5"
-              >
-                <animate
-                  attributeName="stroke-dashoffset"
-                  from="0"
-                  to="20"
-                  dur={`${3 + Math.random() * 4}s`}
-                  repeatCount="indefinite"
-                />
-              </line>
-            ))}
-          </svg>
-        )}
-      </div>
-      
-      {/* Subtle noise texture overlay for premium feel */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      ></div>
-    </div>
+    <>
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 z-0 pointer-events-none"
+      />
+      {/* Subtle overlay for extra polish */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-slate-900/5"></div>
+    </>
   );
 };
 
-export default PremiumAnimatedBackground;
+export default PremiumCanvasBackground;
