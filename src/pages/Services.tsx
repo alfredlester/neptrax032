@@ -150,29 +150,37 @@ export default function Services({ onNavigate }: ServicesProps) {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
-        <div className="absolute inset-0">
-          <WebGLParticles />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+      
+{/* Hero Section */}
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+  <div className="absolute inset-0">
+    <WebGLParticles />
+    <div className="absolute inset-0 bg-black/40"></div>
+  </div>
 
-        <div className={`relative z-10 max-w-6xl mx-auto px-6 text-center transition-all duration-1000 ${
-          isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-black mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-500 bg-clip-text text-transparent animate-glow-text">
-                Explore Our Services
-              </span>
-            </h1>
-          </div>
+  <div
+    className={`relative z-10 max-w-6xl mx-auto px-6 text-center transition-all duration-1000 ${
+      isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+    }`}
+  >
+    <div className="mb-8">
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight">
+        <span className="
+          bg-gradient-to-r 
+          from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF]
+          bg-clip-text text-transparent
+          drop-shadow-[0_0_22px_rgba(80,150,255,0.25)]
+        ">
+          Explore Our Services
+        </span>
+      </h1>
+    </div>
 
-          <div className="mb-12">
-            <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
-              Crafting digital excellence through innovative solutions that transform your vision into reality
-            </p>
-          </div>
+    <div className="mb-12">
+      <p className="text-lg md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
+        Premium digital solutions designed to accelerate your growth and elevate your online presence.
+      </p>
+    </div>
 
           <div className="flex gap-6 justify-center flex-wrap">
             <button
