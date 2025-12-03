@@ -331,7 +331,7 @@ export default function MissionSection() {
   <ScrollReveal direction="right" delay={150}>
     <div>
       <h2 className="text-4xl font-bold text-white mb-6">About Neptrax</h2>
-      <p className="text-white/90 text-lg leading-relaxed">
+      <p className="text-white/90 text-5x1 leading-relaxed">
         Based in Chicago, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. With 8+ years of experience, the work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally. Whether you're starting out or growing, the process stays simple and smooth.
       </p>
     </div>
