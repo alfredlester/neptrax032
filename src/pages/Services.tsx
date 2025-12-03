@@ -319,19 +319,16 @@ export default function Services({ onNavigate }: ServicesProps) {
   </div>
 </div>
 
-{/* Typography Hero - Simple Centered Version */}
-<div className="relative py-20 mb-32">
-  <div className="max-w-3xl mx-auto px-6 text-center">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF] bg-clip-text text-transparent">
+{/* 6-Line Mobile-Optimized Version */}
+<div className="py-10 md:py-16">
+  <div className="max-w-3xl mx-auto px-4 text-center">
+    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold leading-relaxed md:leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF]">
       Simplify operations and<br />
       Reclaim your time,<br />
-      with Neptrax grows your<br />
-      business online from an<br />
-      Idea to a custom Website.
+      with Neptrax grows your business<br />
+      online from an Idea to a<br />
+      custom Website.
     </h2>
-    
-    {/* Subtle gradient divider */}
-    <div className="h-px w-48 mx-auto bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF] opacity-50"></div>
   </div>
 </div>
 
