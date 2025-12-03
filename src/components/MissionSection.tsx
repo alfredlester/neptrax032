@@ -96,7 +96,7 @@ export default function MissionSection() {
   <ScrollReveal direction="left" delay={0} depth={2}>
     <div className="order-2 lg:order-1">
       <div className="relative group">
-        <div className="rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(37,99,235,0.3)] bg-transparent">
+        <div className="rounded-2xl overflow-hidden">
           <img
             src="/home.png"
             alt="Jeton Project"
