@@ -140,7 +140,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 },
 {
   title: 'E-Commerce Store Development',
-  description: 'Online stores built for easy shopping, smooth checkout, and strong product presentation — optimized for conversions.',
+  description: 'Online stores built for easy shopping, smooth checkout, and strong product presentation optimized for conversions.',
 },
 {
   title: 'Content Creation & Copywriting',
