@@ -178,7 +178,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 
     <div className="mb-12">
       <p className="text-lg md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
-        Premium digital solutions designed to accelerate your growth and elevate your online presence.
+        Digital services built to improve how customers see your brand online.
       </p>
     </div>
 
