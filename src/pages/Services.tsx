@@ -317,6 +317,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       </div>
     </div>
   </div>
+</div>
 
           {/* Typography Hero */}
           <div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
