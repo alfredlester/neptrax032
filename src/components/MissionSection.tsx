@@ -317,29 +317,24 @@ export default function MissionSection() {
           </div>
         </ScrollReveal>
 
-        {/* About Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
-          <ScrollReveal direction="left" delay={0} depth={2}>
-            <div className="relative">
-              <img 
-                src="/about.png" 
-                alt="About Neptrax" 
-                className="w-full h-auto rounded-2xl" 
-              />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-600/10 mix-blend-overlay pointer-events-none"></div>
-            </div>
-          </ScrollReveal>
+{/* About Section */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
+  <ScrollReveal direction="left" delay={0} depth={2}>
+    <div className="relative">
+      <img 
+        src="/about.png" 
+        alt="About Neptrax" 
+        className="w-full h-auto rounded-2xl object-contain lg:object-cover lg:h-full bg-transparent"
+      />
+    </div>
+  </ScrollReveal>
 
-          <ScrollReveal direction="right" delay={150}>
-            <div>
-              <h2 className="text-4xl font-bold text-white mb-6">About Neptrax</h2>
-              <p className="text-white/90 text-lg leading-relaxed">
-                Based in Chicago, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. With 8+ years of experience, the work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally. Whether you're starting out or growing, the process stays simple and smooth.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </div>
-    </section>
-  );
-}
+  <ScrollReveal direction="right" delay={150}>
+    <div>
+      <h2 className="text-4xl font-bold text-white mb-6">About Neptrax</h2>
+      <p className="text-white/90 text-lg leading-relaxed">
+        Based in Chicago, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. With 8+ years of experience, the work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally. Whether you're starting out or growing, the process stays simple and smooth.
+      </p>
+    </div>
+  </ScrollReveal>
+</div>
