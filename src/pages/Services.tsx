@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import WebGLParticles from './WebGLParticles';
-import ServicesStyles from './Services.module.css'; // We'll move CSS to separate file
+import ServicesStyles from './Services.module.css';
 
 interface ServicesProps {
   onNavigate: (section: string) => void;
@@ -13,7 +13,6 @@ export default function Services({ onNavigate }: ServicesProps) {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const servicesGridRef = useRef<HTMLDivElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const imageTiltRef = useRef<boolean>(false);
   
   const handleDiscoverClick = useCallback(() => {
     servicesGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -24,7 +23,7 @@ export default function Services({ onNavigate }: ServicesProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  // **FIXED: SINGLE Intersection Observer for ALL reveal animations**
+  // Single Intersection Observer
   useEffect(() => {
     if (observerRef.current) {
       observerRef.current.disconnect();
@@ -46,7 +45,6 @@ export default function Services({ onNavigate }: ServicesProps) {
       { threshold: 0.15 }
     );
 
-    // Observe all reveal elements at once
     const revealElements = document.querySelectorAll('.reveal-up, .minimal-service-item');
     revealElements.forEach((el) => {
       observerRef.current?.observe(el);
@@ -59,9 +57,8 @@ export default function Services({ onNavigate }: ServicesProps) {
     };
   }, []);
 
-  // **FIXED: Optimized image tilt effect with event delegation**
+  // Optimized image tilt effect
   useEffect(() => {
-    // Only run on non-mobile devices
     if (window.innerWidth < 768) return;
     
     let animationFrameId: number;
@@ -70,7 +67,6 @@ export default function Services({ onNavigate }: ServicesProps) {
       const target = ev.target as HTMLElement;
       if (!target.closest('.services-visual img')) return;
       
-      // Throttle with requestAnimationFrame
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
       
       animationFrameId = requestAnimationFrame(() => {
@@ -91,7 +87,6 @@ export default function Services({ onNavigate }: ServicesProps) {
       img.style.transform = '';
     };
 
-    // Use event delegation on the document instead of adding to each image
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseleave', handleMouseLeave, true);
 
@@ -105,51 +100,51 @@ export default function Services({ onNavigate }: ServicesProps) {
   const servicesList = [
     {
       title: 'Custom Website Design',
-      description: 'Crafted pixel-perfect designs that reflect your brand identity.',
+      description: 'Crafted pixel-perfect designs that reflect your brand identity. We create stunning, user-friendly websites that captivate visitors and convert them into loyal customers through strategic visual storytelling.',
     },
     {
       title: 'Full-Stack Web Development',
-      description: 'Building robust, scalable web apps with cutting-edge technologies.',
+      description: 'Building robust, scalable web apps with cutting-edge technologies. From front-end interfaces to back-end architecture, we deliver high-performance solutions that grow with your business needs.',
     },
     {
       title: 'AI-Powered Chatbots',
-      description: 'Intelligent conversational AI that engages customers 24/7.',
+      description: 'Intelligent conversational AI that engages customers 24/7. Our chatbots provide instant support, answer queries, and guide users through seamless experiences while learning from every interaction.',
     },
     {
       title: 'Social Media Management',
-      description: 'Strategic social media campaigns that build communities.',
+      description: 'Strategic social media campaigns that build communities and drive engagement. We manage your presence across platforms, create compelling content, and grow your audience organically.',
     },
     {
       title: 'Brand Identity & Visual Design',
-      description: 'Comprehensive brand development from concept to execution.',
+      description: 'Comprehensive brand development from concept to execution. We craft memorable logos, color palettes, and visual systems that establish strong brand recognition and communicate your unique value proposition.',
     },
     {
       title: 'Social Media & Digital Advertising',
-      description: 'High-converting ad campaigns across social platforms.',
+      description: 'High-converting ad campaigns across Facebook, Instagram, LinkedIn, and Google. We optimize targeting, creative, and messaging to maximize ROI and deliver measurable results for your marketing investment.',
     },
     {
       title: 'SEO Optimization & Growth Strategy',
-      description: 'Comprehensive SEO solutions that boost your search rankings.',
+      description: 'Comprehensive SEO solutions that boost your search rankings and organic traffic. We implement technical optimizations, content strategies, and link-building campaigns that deliver sustainable growth and visibility.',
     },
     {
       title: 'AI Automation Agents',
-      description: 'Custom AI-powered automation that streamlines workflows.',
+      description: 'Custom AI-powered automation that streamlines workflows and increases efficiency. From data processing to customer service, we build intelligent agents that handle repetitive tasks and free up your team.',
     },
     {
       title: 'Mobile App Design & Development',
-      description: 'Native and cross-platform mobile applications.',
+      description: 'Native and cross-platform mobile applications that deliver exceptional user experiences. We design and develop iOS and Android apps that are intuitive, fast, and aligned with your business objectives.',
     },
     {
       title: 'Marketing Audit & Strategic Planning',
-      description: 'In-depth analysis of your marketing performance.',
+      description: 'In-depth analysis of your marketing performance with actionable recommendations. We identify opportunities, optimize spending, and create comprehensive strategies that align with your business goals and budget.',
     },
     {
       title: 'E-Commerce Store Development',
-      description: 'Complete e-commerce solutions built for conversions.',
+      description: 'Complete e-commerce solutions built for conversions and scalability. From product catalogs to secure checkout systems, we create online stores that provide seamless shopping experiences and drive revenue.',
     },
     {
       title: 'Content Creation & Copywriting',
-      description: 'Compelling content that resonates with your audience.',
+      description: 'Compelling content that resonates with your audience and drives action. Our expert writers craft SEO-optimized blog posts, website copy, and marketing materials that establish authority and generate leads.',
     }
   ];
 
@@ -167,7 +162,7 @@ export default function Services({ onNavigate }: ServicesProps) {
         }`}>
           <div className="mb-8">
             <h1 className="text-6xl md:text-8xl font-black mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-500 bg-clip-text text-transparent animate-glow-text">
                 Explore Our Services
               </span>
             </h1>
@@ -175,7 +170,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 
           <div className="mb-12">
             <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
-              Crafting digital excellence through innovative solutions
+              Crafting digital excellence through innovative solutions that transform your vision into reality
             </p>
           </div>
 
@@ -194,26 +189,53 @@ export default function Services({ onNavigate }: ServicesProps) {
         </div>
       </section>
 
-      {/* Services Grid - SIMPLIFIED */}
-      <section ref={servicesGridRef} className="relative py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      {/* Services Grid with Original Gradient */}
+      <section 
+        ref={servicesGridRef} 
+        className="relative py-32 overflow-hidden"
+        style={{
+          background: `linear-gradient(
+            180deg,
+            #000005 0%,
+            #040a16 12%,
+            #070f1f 25%,
+            #0a1528 40%,
+            #0a1528 60%,
+            #070f1f 75%,
+            #040a16 88%,
+            #000005 100%
+          )`,
+          position: 'relative'
+        }}
+      >
+        {/* Subtle overlay for enhanced depth */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at top, rgba(13, 26, 48, 0.3) 0%, transparent 60%)',
+          }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          {/* Section Header */}
           <div className="mb-24 text-center">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight" style={{ fontFamily: "'Inter', 'DM Sans', sans-serif" }}>
               What We Offer
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light" style={{ fontFamily: "'Inter', 'DM Sans', sans-serif" }}>
               Comprehensive solutions designed to elevate your digital presence
             </p>
           </div>
 
+          {/* Two-Column Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8">
             {servicesList.map((service, index) => (
               <div
                 key={index}
-                ref={(el) => {
-                  cardsRef.current[index] = el;
-                }}
-                className="minimal-service-item group relative py-8 border-t border-gray-700"
+                ref={(el) => (cardsRef.current[index] = el)}
+                className={`minimal-service-item group relative py-8 border-t border-gray-700 ${ServicesStyles.minimalServiceItem}`}
+                style={{ fontFamily: "'Inter', 'DM Sans', sans-serif" }}
               >
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0 text-5xl font-bold text-gray-400 transition-all duration-500 group-hover:text-gray-300 min-w-[60px]">
@@ -236,15 +258,15 @@ export default function Services({ onNavigate }: ServicesProps) {
         </div>
       </section>
 
-      {/* Services Showcase Section - SIMPLIFIED */}
-      <section className="relative py-[120px] overflow-hidden bg-[#031521]">
+      {/* Services Showcase Section */}
+      <section className="relative py-[120px] overflow-hidden" style={{ backgroundColor: '#031521' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
           
           {/* Featured Service */}
-          <div className="reveal-up mb-32">
+          <div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6">
+                <div className="badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00c2b3]"></span>
                   Featured Service
                 </div>
@@ -278,8 +300,8 @@ export default function Services({ onNavigate }: ServicesProps) {
             </div>
           </div>
 
-          {/* Typography Hero - SIMPLIFIED */}
-          <div className="reveal-up mb-32">
+          {/* Typography Hero */}
+          <div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
             <div className="relative max-w-5xl">
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[0.98] tracking-tight text-white">
                 Accelerate results,<br />
@@ -293,7 +315,7 @@ export default function Services({ onNavigate }: ServicesProps) {
           </div>
 
           {/* AI Section */}
-          <div className="reveal-up">
+          <div className={`reveal-up ${ServicesStyles.revealUp}`}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#333333] text-[#d7d7d7] text-xs uppercase tracking-wider mb-6">
@@ -304,7 +326,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                   AI Agents & Chatbot Integration
                 </h2>
                 <p className="text-lg md:text-xl text-[#bdbdbd] mb-8 leading-relaxed">
-                  We design AI Agents for natural user interaction, paired with a reasoning agent that plans and executes tasks.
+                  We design AI Agents for natural user interaction, paired with a reasoning agent that plans and executes tasks, making your daily work simpler and more efficient.
                 </p>
                 <button
                   className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-[1.5px] border-white/12 text-white transition-all duration-300 hover:bg-white/95 hover:text-[#2a2a2a] hover:-translate-y-1"
