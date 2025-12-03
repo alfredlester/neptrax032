@@ -238,12 +238,18 @@ export default function Services({ onNavigate }: ServicesProps) {
                 style={{ fontFamily: "'Inter', 'DM Sans', sans-serif" }}
               >
                 <div className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 text-5xl font-bold text-gray-400 transition-all duration-500 group-hover:text-gray-300 min-w-[60px]">
+                  <div className="flex-shrink-0 text-5xl font-extrabold 
+  bg-gradient-to-br from-[#67E8F9] via-[#60A5FA] to-[#3B82F6] 
+  bg-clip-text text-transparent
+  transition-all duration-500 min-w-[60px]">
                     {String(index + 1).padStart(2, '0')}
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">
+                    <h3 className="text-xl md:text-2xl font-bold 
+  bg-gradient-to-r from-[#67E8F9] via-[#60A5FA] to-[#3B82F6]
+  bg-clip-text text-transparent
+  mb-3 tracking-tight">
                       {service.title}
                     </h3>
                     <div className="minimal-line w-0 h-px bg-white mb-4 transition-all duration-700 group-hover:w-16"></div>
