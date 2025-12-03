@@ -49,7 +49,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a1a3f] via-[#0a142f] to-[#0d1117] pt-24 pb-20">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-[#f1f5f9] mb-4">
             Our Work Speaks for Itself.
@@ -65,22 +65,21 @@ export default function Portfolio() {
               key={index}
               className="group bg-[#1e293b] rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer"
             >
+              {/* Image Container - No background, full width on mobile */}
               <div 
-                className="relative h-64 bg-transparent overflow-hidden flex items-center justify-center"
+                className="relative overflow-hidden bg-transparent"
                 onClick={() => handleImageClick(project.url)}
               >
-                {/* White/light background for transparent images on mobile */}
-                <div className="absolute inset-0 bg-[#1e293b] md:bg-transparent -z-10"></div>
+                {/* White background for transparent images */}
+                <div className="absolute inset-0 bg-white/5 md:bg-transparent -z-10"></div>
                 
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-contain p-4 md:p-0 md:object-cover group-hover:md:scale-110 transition-transform duration-300"
+                  className="w-full h-auto max-h-64 object-contain p-2 md:p-0 md:object-cover md:h-64 md:group-hover:scale-110 transition-transform duration-300"
                   onError={handleImageError}
+                  style={{ minHeight: '200px' }}
                 />
-                
-                {/* Bottom gradient overlay (reduced opacity) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117]/60 via-transparent to-transparent opacity-30 md:opacity-40"></div>
                 
                 {/* Hover overlay with visit website button */}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
@@ -91,7 +90,8 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div className="p-6">
+              {/* Text section with grey background - directly connected to image */}
+              <div className="p-6 bg-[#1e293b]">
                 <h3 className="text-2xl font-bold text-[#f1f5f9] mb-2">{project.name}</h3>
                 <p className="text-[#94a3b8] text-sm leading-tight">{project.description}</p>
               </div>
