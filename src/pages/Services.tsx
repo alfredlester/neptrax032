@@ -317,9 +317,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 {/* Typography Hero - Hidden on mobile, shown on md and above */}
 <div className={`reveal-up mb-24 md:mb-32 ${ServicesStyles.revealUp} hidden md:block`}>
   <div className="relative max-w-5xl">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] md:leading-[0.98] tracking-tight 
-      bg-gradient-to-r from-white via-[#DFF6FF] to-[#AEE5FF] 
-      bg-clip-text text-transparent
+    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] md:leading-[0.98] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#E6F4FF] via-[#A1D8FF] to-[#3F8BFF]
     ">
       Accelerate results,<br />
       Simplify operations,<br />
