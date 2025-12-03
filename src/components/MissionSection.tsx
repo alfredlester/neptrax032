@@ -323,7 +323,7 @@ export default function MissionSection() {
       <img 
         src="/about.png" 
         alt="About Neptrax" 
-        className="w-screen h-auto object-contain lg:object-cover lg:h-full bg-transparent"
+        className="w-full h-auto object-contain lg:object-cover lg:h-full bg-transparent"
       />
     </div>
   </ScrollReveal>
