@@ -340,5 +340,5 @@ export default function MissionSection() {
 </div>
 </div>
 </section>
-  );
+);
 }
