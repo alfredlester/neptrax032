@@ -66,16 +66,21 @@ export default function Portfolio() {
               className="group bg-[#1e293b] rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer"
             >
               <div 
-                className="relative h-64 bg-gradient-to-br from-[#0f172a] to-[#2563eb] overflow-hidden"
+                className="relative h-64 bg-transparent overflow-hidden flex items-center justify-center"
                 onClick={() => handleImageClick(project.url)}
               >
+                {/* White/light background for transparent images on mobile */}
+                <div className="absolute inset-0 bg-[#1e293b] md:bg-transparent -z-10"></div>
+                
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-contain p-4 md:p-0 md:object-cover group-hover:md:scale-110 transition-transform duration-300"
                   onError={handleImageError}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-transparent to-transparent opacity-40"></div>
+                
+                {/* Bottom gradient overlay (reduced opacity) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117]/60 via-transparent to-transparent opacity-30 md:opacity-40"></div>
                 
                 {/* Hover overlay with visit website button */}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
