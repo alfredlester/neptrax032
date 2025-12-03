@@ -335,7 +335,7 @@ export default function Services({ onNavigate }: ServicesProps) {
         </div>
       </div>
     </div>
-  </div>
+
 
 
 {/* Typography Hero - Hidden on mobile, shown on md and above */}
