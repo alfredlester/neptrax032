@@ -319,24 +319,19 @@ export default function Services({ onNavigate }: ServicesProps) {
   </div>
 </div>
 
-{/* Typography Hero - SIMPLIFIED CENTERED VERSION */}
+{/* Typography Hero - Simple Centered Version */}
 <div className="relative py-20 mb-32">
   <div className="max-w-3xl mx-auto px-6 text-center">
-    {/* Gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#A1D8FF]/5 to-transparent pointer-events-none"></div>
-    
-    <h2 className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-8 ${ServicesStyles.iceGradientText}`}>
-      <span className={`block ${ServicesStyles.textReveal}`}>Simplify operations and</span>
-      <span className={`block ${ServicesStyles.textReveal}`}>Reclaim your time,</span>
-      <span className={`block ${ServicesStyles.textReveal}`}>with Neptrax grows your</span>
-      <span className={`block ${ServicesStyles.textReveal}`}>business online from an</span>
-      <span className={`block ${ServicesStyles.textReveal}`}>Idea to a custom Website.</span>
+    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF] bg-clip-text text-transparent">
+      Simplify operations and<br />
+      Reclaim your time,<br />
+      with Neptrax grows your<br />
+      business online from an<br />
+      Idea to a custom Website.
     </h2>
     
-    {/* Subtle accent line */}
-    <div className="relative inline-block">
-      <div className={`h-1 w-0 mx-auto bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF] rounded-full transition-all duration-1000 ${ServicesStyles.expandLine}`}></div>
-    </div>
+    {/* Subtle gradient divider */}
+    <div className="h-px w-48 mx-auto bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF] opacity-50"></div>
   </div>
 </div>
 
