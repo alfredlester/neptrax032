@@ -166,9 +166,9 @@ export default function Services({ onNavigate }: ServicesProps) {
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight">
         <span className="
           bg-gradient-to-r 
-          from-[#E0F7FF] via-[#A8DFFF] to-[#75B4FF]
-          bg-clip-text text-transparent 
-          drop-shadow-[0_0_25px_rgba(155,205,255,0.25)]
+          from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF]
+          bg-clip-text text-transparent
+          drop-shadow-[0_0_22px_rgba(80,150,255,0.25)]
         ">
           Explore Our Services
         </span>
