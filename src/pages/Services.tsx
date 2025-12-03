@@ -312,7 +312,6 @@ export default function Services({ onNavigate }: ServicesProps) {
         loading="lazy"
       />
     </div>
-  </div>
 
           {/* Typography Hero */}
           <div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
