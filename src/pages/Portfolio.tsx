@@ -65,17 +65,18 @@ export default function Portfolio() {
               key={index}
               className="group rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer"
             >
-              {/* Image Container - COMPLETELY CLEAN, no background at all */}
+              {/* Image Container - Now with rounded corners */}
               <div 
-                className="relative overflow-hidden"
+                className="relative overflow-hidden rounded-t-2xl"
                 onClick={() => handleImageClick(project.url)}
               >
-                {/* Image with clean presentation */}
+                {/* Image with rounded top corners */}
                 <img
                   src={project.image}
                   alt={project.name}
                   className="w-full h-auto max-h-64 object-contain md:object-cover md:h-64 md:group-hover:scale-105 transition-transform duration-300 bg-transparent"
                   onError={handleImageError}
+                  style={{ borderRadius: '0.75rem 0.75rem 0 0' }}
                 />
                 
                 {/* Hover overlay with visit website button */}
@@ -87,8 +88,8 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              {/* Text section with grey background - directly under image */}
-              <div className="p-6 bg-[#1e293b]">
+              {/* Text section with grey background and rounded bottom corners */}
+              <div className="p-6 bg-[#1e293b] rounded-b-2xl">
                 <h3 className="text-2xl font-bold text-[#f1f5f9] mb-2">{project.name}</h3>
                 <p className="text-[#94a3b8] text-sm leading-tight">{project.description}</p>
               </div>
