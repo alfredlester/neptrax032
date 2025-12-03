@@ -228,3 +228,48 @@
     animation: none;
   }
 }
+
+
+integrate this code into services.module.css and write the entire code
+
+
+/* Services.module.css - Add these styles */
+
+/* Staggered text reveal animation */
+.staggeredText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.textLine {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(4px);
+  animation: lineReveal 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+/* Staggered delays for each line */
+.revealUp.inView .textLine:nth-child(1) { animation-delay: 0.1s; }
+.revealUp.inView .textLine:nth-child(2) { animation-delay: 0.2s; }
+.revealUp.inView .textLine:nth-child(3) { animation-delay: 0.3s; }
+.revealUp.inView .textLine:nth-child(4) { animation-delay: 0.4s; }
+.revealUp.inView .textLine:nth-child(5) { animation-delay: 0.5s; }
+.revealUp.inView .textLine:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes lineReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
