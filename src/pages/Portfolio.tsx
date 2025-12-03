@@ -66,7 +66,7 @@ export default function Portfolio() {
               className="group bg-[#1e293b] rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer"
             >
               <div 
-                className="relative h-64 overflow-hidden"
+                className="relative h-64 bg-gradient-to-br from-[#0f172a] to-[#2563eb] overflow-hidden"
                 onClick={() => handleImageClick(project.url)}
               >
                 <img
