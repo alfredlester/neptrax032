@@ -338,5 +338,3 @@ export default function MissionSection() {
     </div>
   </ScrollReveal>
 </div>
-</div>
-</div>
