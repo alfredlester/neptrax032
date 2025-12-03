@@ -95,15 +95,13 @@ export default function MissionSection() {
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
   <ScrollReveal direction="left" delay={0} depth={2}>
     <div className="order-2 lg:order-1">
-      <div className="relative group">
-        <div className="rounded-2xl overflow-hidden">
-          <img
-            src="/home.png"
-            alt="Jeton Project"
-            className="w-full h-auto object-contain lg:object-cover lg:h-[540px] transition-all duration-500 group-hover:brightness-110 bg-transparent"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="relative overflow-hidden rounded-2xl">
+        <img
+          src="/home.png"
+          alt="Jeton Project"
+          className="w-full h-auto object-contain lg:object-cover lg:h-[540px]"
+          style={{ borderRadius: '0.75rem' }}
+        />
       </div>
     </div>
   </ScrollReveal>
