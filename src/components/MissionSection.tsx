@@ -15,7 +15,7 @@ import {
   ClipboardList,
 } from 'lucide-react';
 
-import ScrollReveal from '/ScrollReveal';
+import ScrollReveal from './ScrollReveal';
 
 export default function MissionSection() {
   const features = [
