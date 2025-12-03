@@ -319,16 +319,16 @@ export default function Services({ onNavigate }: ServicesProps) {
   </div>
 </div>
 
-{/* Typography Hero - Desktop only with line-by-line animation */}
+{/* Typography Hero - Hidden on mobile, shown on md and above */}
 <div className={`reveal-up mb-24 md:mb-32 ${ServicesStyles.revealUp} hidden md:block`}>
   <div className="relative max-w-5xl">
-    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] md:leading-[0.98] tracking-tight text-white ${ServicesStyles.staggeredText}`}>
-      <span className={ServicesStyles.textLine}>Accelerate results,</span>
-      <span className={ServicesStyles.textLine}>Simplify operations,</span>
-      <span className={ServicesStyles.textLine}>Reclaim your time for</span>
-      <span className={ServicesStyles.textLine}>What truly grows your</span>
-      <span className={ServicesStyles.textLine}>business online from an</span>
-      <span className={ServicesStyles.textLine}>Idea to a custom Website.</span>
+    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] md:leading-[0.98] tracking-tight text-white">
+      Accelerate results,<br />
+      Simplify operations,<br />
+      Reclaim your time for<br />
+      What truly grows your<br />
+      business online from an<br />
+      Idea to a custom Website.
     </h2>
   </div>
 </div>
