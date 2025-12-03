@@ -319,17 +319,24 @@ export default function Services({ onNavigate }: ServicesProps) {
   </div>
 </div>
 
-{/* Typography Hero */}
-<div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
-  <div className="relative max-w-5xl">
-    <h2 className="whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1] tracking-tight text-white">
-      Accelerate results,<br />
-      Simplify operations,<br />
-      Reclaim your time for<br />
-      What truly grows your<br />
-      business online from an<br />
-      Idea to a custom Website.
+{/* Typography Hero - SIMPLIFIED CENTERED VERSION */}
+<div className="relative py-20 mb-32">
+  <div className="max-w-3xl mx-auto px-6 text-center">
+    {/* Gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#A1D8FF]/5 to-transparent pointer-events-none"></div>
+    
+    <h2 className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-8 ${ServicesStyles.iceGradientText}`}>
+      <span className={`block ${ServicesStyles.textReveal}`}>Simplify operations and</span>
+      <span className={`block ${ServicesStyles.textReveal}`}>Reclaim your time,</span>
+      <span className={`block ${ServicesStyles.textReveal}`}>with Neptrax grows your</span>
+      <span className={`block ${ServicesStyles.textReveal}`}>business online from an</span>
+      <span className={`block ${ServicesStyles.textReveal}`}>Idea to a custom Website.</span>
     </h2>
+    
+    {/* Subtle accent line */}
+    <div className="relative inline-block">
+      <div className={`h-1 w-0 mx-auto bg-gradient-to-r from-[#A1D8FF] via-[#6FB7FF] to-[#3F8BFF] rounded-full transition-all duration-1000 ${ServicesStyles.expandLine}`}></div>
+    </div>
   </div>
 </div>
 
