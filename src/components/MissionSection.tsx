@@ -340,6 +340,3 @@ export default function MissionSection() {
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
