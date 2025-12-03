@@ -322,13 +322,13 @@ export default function Services({ onNavigate }: ServicesProps) {
 {/* Typography Hero */}
 <div className={`reveal-up mb-32 ${ServicesStyles.revealUp}`}>
   <div className="relative max-w-5xl">
-    <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white space-y-2">
-      <span className="block whitespace-nowrap">Accelerate results,</span>
-      <span className="block whitespace-nowrap">Simplify operations,</span>
-      <span className="block whitespace-nowrap">Reclaim your time for</span>
-      <span className="block whitespace-nowrap">What truly grows your</span>
-      <span className="block whitespace-nowrap">business online from an</span>
-      <span className="block whitespace-nowrap">Idea to a custom Website.</span>
+    <h2 className="whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1] tracking-tight text-white">
+      Accelerate results,<br />
+      Simplify operations,<br />
+      Reclaim your time for<br />
+      What truly grows your<br />
+      business online from an<br />
+      Idea to a custom Website.
     </h2>
   </div>
 </div>
