@@ -91,17 +91,19 @@ export default function MissionSection() {
   return (
     <section className="bg-[#28282B] py-24">
       <div className="max-w-7xl mx-auto px-6">
+        
 {/* Hero Image + Text */}
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
   <ScrollReveal direction="left" delay={0} depth={2}>
     <div className="order-2 lg:order-1">
-      <div className="relative overflow-hidden rounded-2xl">
+      <div className="relative group overflow-hidden rounded-2xl shadow-[0_0_60px_rgba(37,99,235,0.3)]">
         <img
           src="/home.png"
           alt="Jeton Project"
-          className="w-full h-auto object-contain lg:object-cover lg:h-[540px]"
+          className="w-full h-auto object-contain lg:object-cover lg:h-[540px] transition-all duration-500 group-hover:brightness-110"
           style={{ borderRadius: '0.75rem' }}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
     </div>
   </ScrollReveal>
