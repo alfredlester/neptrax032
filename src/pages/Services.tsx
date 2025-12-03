@@ -180,7 +180,6 @@ export default function Services({ onNavigate }: ServicesProps) {
         Premium digital solutions designed to accelerate your growth and elevate your online presence.
       </p>
     </div>
-          </div>
 
           <div className="flex gap-6 justify-center flex-wrap">
             <button
